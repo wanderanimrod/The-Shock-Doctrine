@@ -23,7 +23,7 @@ d3.json("world.json", function(json) {
         .enter()
         .append("path")
         .attr("d", path)
-        .attr("fill", function() {
-            return color(Math.random());
-        })
+        .attr("fill", "none")
+        .attr("stroke", "rgb(0,172,0)")
+        .attr("stroke-width", "0.9px")
 });
