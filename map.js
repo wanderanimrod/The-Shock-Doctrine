@@ -32,17 +32,22 @@ d3.json("events.json", function(json) {
     run(wrapEvents(json.events));
 });
 
+var intervalId;
+
 function run(events) {
-    setInterval(function() {
+    intervalId = setInterval(function() {
         var event = events.next();
         if(event === terminationEvent) {
-            clearInterval(this.id);
+            stopPlotting();
         }
         else {
-            console.log("Plotting event", event);
             plot(event);
         }
-    }, 1000)
+    }, 1000);
+}
+
+function stopPlotting() {
+    clearInterval(intervalId);
 }
 
 function plot(event) {
@@ -50,7 +55,7 @@ function plot(event) {
     svg.append("circle")
         .attr("cx", center[0])
         .attr("cy", center[1])
-        .attr("r", 5)
+        .attr("r", 8)
         .attr("fill", "red");
 }
 
@@ -59,7 +64,7 @@ var nextEventIndex = -1;
 
 function wrapEvents(events) {
     events.next = function() {
-        if(nextEventIndex < events.length) {
+        if(nextEventIndex < events.length - 1) {
             nextEventIndex += 1;
             return events[nextEventIndex];
         }
