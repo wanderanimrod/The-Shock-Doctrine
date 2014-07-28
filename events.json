@@ -1,0 +1,38 @@
+{"events": [
+    {
+        "coordinates": {
+            "lon": 0,
+            "lat": 0
+        },
+        "name": "Center of the Earth"
+    },
+    {
+        "coordinates": {
+            "lon": 10,
+            "lat": 10
+        },
+        "name": "Uganda"
+    },
+    {
+        "coordinates": {
+            "lon": 35,
+            "lat": 18
+        },
+        "name": "Chile"
+    },
+    {
+        "coordinates": {
+            "lon": -26,
+            "lat": -34
+        },
+        "name": "USA"
+    },
+    {
+        "coordinates": {
+            "lon": 0,
+            "lat": 30
+        },
+        "name": "Britain"
+    }
+]
+}

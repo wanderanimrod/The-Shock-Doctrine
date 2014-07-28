@@ -28,10 +28,46 @@ d3.json("world.json", function(json) {
         .attr("stroke-width", "0.9px")
 });
 
-var center = projection([0, 0]);
+d3.json("events.json", function(json) {
+    run(wrapEvents(json.events));
+});
 
-svg.append("circle")
-    .attr("cx", center[0])
-    .attr("cy", center[1])
-    .attr("r", 5)
-    .attr("fill", "red");
+function run(events) {
+    setInterval(function() {
+        var event = events.next();
+        if(event === terminationEvent) {
+            clearInterval(this.id);
+        }
+        else {
+            console.log("Plotting event", event);
+            plot(event);
+        }
+    }, 1000)
+}
+
+function plot(event) {
+    var center = projection([event.coordinates.lon, event.coordinates.lat]);
+    svg.append("circle")
+        .attr("cx", center[0])
+        .attr("cy", center[1])
+        .attr("r", 5)
+        .attr("fill", "red");
+}
+
+var terminationEvent = {type: "END"};
+var nextEventIndex = -1;
+
+function wrapEvents(events) {
+    events.next = function() {
+        if(nextEventIndex < events.length) {
+            nextEventIndex += 1;
+            return events[nextEventIndex];
+        }
+        else {
+            return terminationEvent;
+        }
+    };
+    return events;
+}
+
+
