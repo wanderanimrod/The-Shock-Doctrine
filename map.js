@@ -1,11 +1,8 @@
-var width = "100%",
-    height = 1000;
+var height = 1000;
 
 svg = d3.select("#map")
-    .attr("style", "background-color: #0E0E0E; padding-left: 20px")
-    .attr("width", width)
     .append("svg")
-    .attr("width", "68%")
+    .attr("width", "100%")
     .attr("height", height);
 
 
