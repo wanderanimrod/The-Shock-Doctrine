@@ -1,6 +1,8 @@
 {
     "type": "Presentation",
     "title": "THE RISE OF DISASTER CAPITALISM",
+    "subTitle": "Based on \"The Shock Doctrine\" <p> Naomi Klein",
+    "slideDuration": 1,
     "slides": [
         {
             "theme": "What Disaster Capitalism is",
@@ -19,15 +21,15 @@
             "caption": "Shock Treatment"
         },
         {
-            "theme": "Doesn't work well in a Democracy",
+            "theme": "It doesn't like democracies",
             "caption": "Bolivia, 1985. <p> 300% hike in price of oil, food subsidies scraped, in a starving country at conflict."
         },
         {
-            "theme": "Doesn't work well in a Democracy",
+            "theme": "It doesn't like democracies",
             "caption": "But Sometimes it does. <p> Ronald Reagan, Nicolas Sarkozy."
         },
         {
-            "theme": "Doesn't work well in a Democracy",
+            "theme": "It doesn't like democracies",
             "caption": "... Or does it?"
         },
         {
@@ -75,7 +77,7 @@
             "caption": "The global footprint of Shock Treatment. <p> Since 1974"
         },
         {
-            "theme": "",
+            "theme": "<p><p>",
             "caption": "And that's just chapter one!"
         }
     ]

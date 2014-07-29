@@ -29,23 +29,63 @@ d3.json("world.json", function(json) {
         .attr("stroke-width", "0.1px")
 });
 
-//d3.json("events.json", function(json) {
-//    run(wrapEvents(json.events));
-//});
+d3.json("presentation.json", function(data) {
 
+    themeDiv = d3.select("#theme");
+    captionDiv = d3.select("#caption");
+
+    setupHomeSlide(data);
+
+    runSlides(wrapSlides(data.slides), data.slideDuration)
+});
+
+d3.json("events.json", function(json) {
+    runEvents(wrapEvents(json.events));
+});
+
+var slidesIntervalId;
+function runSlides(slides, slideDuration) {
+    slidesIntervalId = setInterval(function() {
+        if(slides.hasNext()) {
+            var slide = slides.next();
+            setTheme(slide.theme);
+            setCaption(slide.caption);
+        }
+        else stopPresentation();
+    }, slideDuration * 1000);
+}
+
+
+function stopPresentation() {
+    clearInterval(slidesIntervalId);
+}
 var eventsIntervalId;
 
-function run(events) {
+function runEvents(events) {
     eventsIntervalId = setInterval(function() {
-        var event = events.next();
-        if(event === terminationEvent) {
-            stopPlotting();
-        }
-        else {
+        if(events.hasNext()) {
             clearInterval(breatheIntervalId);
-            plot(event);
+            plot(events.next());
         }
+        else stopPlotting();
     }, 3000);
+}
+
+var themeDiv, captionDiv;
+
+function setupHomeSlide(content) {
+    setTheme(content.title);
+    setCaption(content.subTitle);
+}
+
+function setTheme(value) {
+    //Set theme div text to value
+//    console.log("Setting theme to ", value);
+}
+
+function setCaption(value) {
+    //Set caption div text to value
+//    console.log("Setting caption to ", value);
 }
 
 function stopPlotting() {
@@ -84,20 +124,34 @@ function breathe(circle) {
 
 }
 
-var terminationEvent = {type: "END"};
 var nextEventIndex = -1;
 
 function wrapEvents(events) {
     events.next = function() {
-        if(nextEventIndex < events.length - 1) {
-            nextEventIndex += 1;
-            return events[nextEventIndex];
-        }
-        else {
-            return terminationEvent;
-        }
+        nextEventIndex += 1;
+        return events[nextEventIndex];
+    };
+
+    events.hasNext = function() {
+        return nextEventIndex < events.length - 1;
     };
     return events;
 }
+
+var nextSlideIndex = -1;
+function wrapSlides(slides) {
+    slides.next = function() {
+        nextSlideIndex += 1;
+        return slides[nextSlideIndex];
+    };
+
+    slides.hasNext = function() {
+        return nextSlideIndex < slides.length - 1;
+    };
+
+    return slides;
+}
+
+
 
 
