@@ -40,7 +40,8 @@ d3.json("presentation.json", function(data) {
 });
 
 d3.json("events.json", function(json) {
-    runEvents(wrapEvents(json.events));
+    //TODO sort events by time.
+    schedulePlotEvents(wrapEvents(json.events));
 });
 
 var slidesIntervalId;
@@ -55,20 +56,17 @@ function runSlides(slides, slideDuration) {
     }, slideDuration * 1000);
 }
 
-
 function stopPresentation() {
     clearInterval(slidesIntervalId);
 }
-var eventsIntervalId;
 
-function runEvents(events) {
-    eventsIntervalId = setInterval(function() {
-        if(events.hasNext()) {
+function schedulePlotEvents(events) {
+    events.forEach(function(event) {
+        setTimeout(function() {
             clearInterval(breatheIntervalId);
-            plot(events.next());
-        }
-        else stopPlotting();
-    }, 3000);
+            plot(event);
+        }, event.at * 1000);
+    });
 }
 
 var themeDiv, captionDiv;
@@ -90,7 +88,6 @@ function setCaption(value) {
 
 function stopPlotting() {
     clearInterval(breatheIntervalId);
-    clearInterval(eventsIntervalId);
 }
 
 function plot(event) {
@@ -110,10 +107,10 @@ function breathe(circle) {
     breatheIntervalId = setInterval(function() {
         circle.transition()
             .ease("linear")
-            .duration(500)
+            .duration(100)
             .style("stroke-width", 1.6)
             .style("stroke", "red")
-            .attr("r", 14)
+            .attr("r", 10)
             .transition()
             .ease("linear")
             .duration(500)
