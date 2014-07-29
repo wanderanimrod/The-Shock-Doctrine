@@ -1,16 +1,18 @@
 var width = "100%",
-    height = 800;
+    height = 1000;
 
-svg = d3.select("#map").append("svg")
+svg = d3.select("#map")
+    .attr("style", "background-color: #0E0E0E; padding-left: 20px")
     .attr("width", width)
-    .attr("height", height)
-    .attr("style", "background-color: #0E0E0E");
+    .append("svg")
+    .attr("width", "68%")
+    .attr("height", height);
 
 
 projection = d3.geo.equirectangular()
-    .center([0.0, 0.0])
-    .scale(200)
-    .translate([700, height / 2]);
+    .center([-25.0, 0.0])
+    .scale(190)
+    .translate([350, height / 2]);
 
 color = d3.scale.quantize().range(["rgb(237,248,233)", "rgb(186,228,179)",
     "rgb(116,196,118)", "rgb(49,163,84)", "rgb(0,109,44)"
@@ -30,37 +32,59 @@ d3.json("world.json", function(json) {
         .attr("stroke-width", "0.1px")
 });
 
-d3.json("events.json", function(json) {
-    run(wrapEvents(json.events));
-});
+//d3.json("events.json", function(json) {
+//    run(wrapEvents(json.events));
+//});
 
-var intervalId;
+var eventsIntervalId;
 
 function run(events) {
-    intervalId = setInterval(function() {
+    eventsIntervalId = setInterval(function() {
         var event = events.next();
         if(event === terminationEvent) {
             stopPlotting();
         }
         else {
+            clearInterval(breatheIntervalId);
             plot(event);
         }
-    }, 1000);
+    }, 3000);
 }
 
 function stopPlotting() {
-    clearInterval(intervalId);
+    clearInterval(breatheIntervalId);
+    clearInterval(eventsIntervalId);
 }
 
 function plot(event) {
     var center = projection([event.coordinates.lon, event.coordinates.lat]);
-    svg.append("circle")
+    var circle = svg.append("circle")
         .attr("cx", center[0])
         .attr("cy", center[1])
-        .attr("r", 8)
+        .attr("r", 6.5)
         .attr("fill", "#C4C4C4")
         .attr("stroke", "#FFFFFF")
         .attr("stroke-width", 0.8);
+    breathe(circle);
+}
+
+var breatheIntervalId;
+function breathe(circle) {
+    breatheIntervalId = setInterval(function() {
+        circle.transition()
+            .ease("linear")
+            .duration(500)
+            .style("stroke-width", 1.6)
+            .style("stroke", "red")
+            .attr("r", 14)
+            .transition()
+            .ease("linear")
+            .duration(500)
+            .style("stroke-width", 0.8)
+            .style("stroke", "white")
+            .attr("r", 5)
+    }, 1000);
+
 }
 
 var terminationEvent = {type: "END"};
