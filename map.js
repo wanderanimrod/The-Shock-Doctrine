@@ -125,33 +125,27 @@ function breathe(circle) {
 }
 
 var nextEventIndex = -1;
-
 function wrapEvents(events) {
-    events.next = function() {
-        nextEventIndex += 1;
-        return events[nextEventIndex];
-    };
-
-    events.hasNext = function() {
-        return nextEventIndex < events.length - 1;
-    };
-    return events;
+    return wrap(events, nextEventIndex);
 }
 
 var nextSlideIndex = -1;
 function wrapSlides(slides) {
-    slides.next = function() {
-        nextSlideIndex += 1;
-        return slides[nextSlideIndex];
-    };
-
-    slides.hasNext = function() {
-        return nextSlideIndex < slides.length - 1;
-    };
-
-    return slides;
+    return wrap(slides, nextSlideIndex);
 }
 
+function wrap(objects, trackingIndex) {
+    objects.next = function() {
+        trackingIndex += 1;
+        return objects[trackingIndex];
+    };
+
+    objects.hasNext = function() {
+        return trackingIndex < objects.length - 1;
+    };
+
+    return objects;
+}
 
 
 
