@@ -7,36 +7,49 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'/>
     <style>
         h1 {
-            font-weight: 700;
-        }
-        h2 {
             color: #1FA67D;
         }
+
         body {
             color: white;
             font-family: 'Oswald', sans-serif;
+            margin: 0;
+            padding: 0;
         }
+
         .caption {
-            margin-top: 50px;
-            font-size: 20px;
+            margin-top: 90px;
+            font-size: 26px;
             font-weight: lighter;
-            align-self: center;
+            max-width: 300px;
         }
+
         .theme {
-            margin-top: 80px
+            margin-top: 215px
         }
-        .title {
-            margin-top: 200px;
+
+        .map {
+            padding-left: 20px;
+            width: 1050px;
+            float: left;
+        }
+
+        .slide {
+            text-align: left;
+            margin-left: 1120px;
+            height: 1000px;
+            padding: 20px
         }
     </style>
 </head>
-<body style="margin: 0; padding: 0">
+<body>
 <div style="overflow: hidden; width: 100%; background-color: #0E0E0E;">
-    <div id="map" style=" padding-left: 20px; width: 1050px; float: left;"></div>
-    <div id="text-slide" style="text-align: center; margin-left: 1070px; height: 1000px; padding: 20px">
-        <h1 class="title">THE RISE OF DISASTER CAPITALISM</h1>
-        <h2 class="theme">Does not work in a democracy</h2>
-        <div class="caption">Bolivia, 1985.<div><p> 300% hike in price of oil, no food subsidies, in a starving country</div></div>
+    <div id="map" class="map"></div>
+    <div id="text-slide" class="slide">
+        <h1 class="theme">Does not work in a democracy</h1>
+
+        <div class="caption">Bolivia, 1985. <p> 300% hike in price of oil, no food subsidies, in a starving country
+        </div>
     </div>
 </div>
 <script type="text/javascript" src="d3.v3.min.js"></script>
