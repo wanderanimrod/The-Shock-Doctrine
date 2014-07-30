@@ -6,47 +6,47 @@
     },
     {
         "coordinates":[-33.468286, -70.530150],
-        "at": 1,
+        "at": 80,
         "name": "Chile"
     },
     {
         "coordinates":[-18.891162, -65.285236],
-        "at": 2,
+        "at": 100,
         "name": "Sucre, Bolivia"
     },
     {
         "coordinates": [38.912165, -77.038609],
-        "at": 3,
+        "at": 120,
         "name": "Washington DC, USA - Reaganomics"
     },
     {
         "coordinates": [48.859593, 2.351351],
-        "at": 4,
+        "at": 130,
         "name": "France, Paris - Sarkozy"
     },
     {
         "coordinates":[33.314268, 44.394357],
-        "at": 5,
+        "at": 160,
         "name": "Iraq - Feast starts on the eve"
     },
     {
         "coordinates":[30.036208, -89.950717],
-        "at": 6,
+        "at": 180,
         "name": "New Orleans - Disaster relief"
     },
     {
         "coordinates":[34.548334, 69.177132],
-        "at": 7,
+        "at": 200,
         "name": "Kabul - Military industrial complex"
     },
     {
         "coordinates":[14.736332, 24.851815],
-        "at": 8,
+        "at": 220,
         "name": "Darfur - Mission Creep"
     },
     {
         "coordinates":[40.706208, -74.008787],
-        "at": 9,
+        "at": 260,
         "name": "Wall Street- Free markets advocacy"
     }
 ]}

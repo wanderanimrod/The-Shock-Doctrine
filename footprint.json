@@ -16,5 +16,5 @@
         {"name": "China", "coordinates": [30.924061, 113.573399]},
         {"name": "South Africa", "coordinates": [-25.692770, 28.154451]}
     ],
-    "plotAt": 3
+    "plotAt": 360
 }

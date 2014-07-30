@@ -2,7 +2,7 @@
     "type": "Presentation",
     "title": "THE RISE OF DISASTER CAPITALISM",
     "subTitle": "Based on \"The Shock Doctrine.\" <p> - Naomi Klein",
-    "slideDuration": 1,
+    "slideDuration": 20,
     "slides": [
         {
             "theme": "What Disaster Capitalism is",
@@ -14,11 +14,11 @@
         },
         {
             "theme": "What Disaster Capitalism is",
-            "caption": "Milton Friedman."
+            "caption": "Milton Friedman"
         },
         {
             "theme": "What Disaster Capitalism is",
-            "caption": "Shock Treatment"
+            "caption": "Shock Treatment. <p> Augusto Pinochet"
         },
         {
             "theme": "It doesn't like democracies",
@@ -74,7 +74,7 @@
         },
         {
             "theme": "The Map",
-            "caption": "The global footprint of Friedmanite Shock Treatment. <p> Since 1974"
+            "caption": "The global footprint of Friedmanite Shock Treatment. <p> Since 1974."
         },
         {
             "theme": "<p style=\"padding-top: 50px\">",
