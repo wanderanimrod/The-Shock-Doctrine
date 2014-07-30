@@ -77,13 +77,11 @@ function setupHomeSlide(content) {
 }
 
 function setTheme(value) {
-    //Set theme div text to value
-//    console.log("Setting theme to ", value);
+    themeDiv.html(value);
 }
 
 function setCaption(value) {
-    //Set caption div text to value
-//    console.log("Setting caption to ", value);
+    captionDiv.html(value);
 }
 
 function stopPlotting() {

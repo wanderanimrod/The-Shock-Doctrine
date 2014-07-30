@@ -1,7 +1,7 @@
 {
     "type": "Presentation",
     "title": "THE RISE OF DISASTER CAPITALISM",
-    "subTitle": "Based on \"The Shock Doctrine\" <p> Naomi Klein",
+    "subTitle": "Based on \"The Shock Doctrine.\" <p> - Naomi Klein",
     "slideDuration": 1,
     "slides": [
         {
@@ -77,8 +77,8 @@
             "caption": "The global footprint of Shock Treatment. <p> Since 1974"
         },
         {
-            "theme": "<p><p>",
-            "caption": "And that's just chapter one!"
+            "theme": "<p style=\"padding-top: 50px\">",
+            "caption": "And that's just Chapter One."
         }
     ]
 }
