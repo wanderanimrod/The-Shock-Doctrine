@@ -1,0 +1,20 @@
+{
+    "points": [
+        {"name": "Uganda", "coordinates": [0.306124, 32.582284]},
+        {"name": "Zambia", "coordinates": [-15.427255, 28.297061]},
+        {"name": "Argentina", "coordinates": [-34.612603, -58.475871]},
+        {"name": "Ecuador", "coordinates": [-0.163935, -78.448734]},
+        {"name": "Brazil", "coordinates": [-15.782892, -47.897037]},
+        {"name": "Mexico", "coordinates": [19.373872, -99.154931]},
+        {"name": "Thailand", "coordinates": [13.754949, 100.510888]},
+        {"name": "Malaysia", "coordinates": [3.124776, 101.695439]},
+        {"name": "Sri Lanka", "coordinates": [6.934567, 79.860733]},
+        {"name": "South Korea", "coordinates": [37.573536, 126.955904]},
+        {"name": "Britain", "coordinates": [51.534835, -0.060400]},
+        {"name": "Russia", "coordinates": [55.802700, 37.636615]},
+        {"name": "Poland", "coordinates": [52.226840, 21.095526]},
+        {"name": "China", "coordinates": [30.924061, 113.573399]},
+        {"name": "South Africa", "coordinates": [-25.692770, 28.154451]}
+    ],
+    "plotAt": 3
+}
