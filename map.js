@@ -58,6 +58,7 @@ function runSlides(slides, slideDuration) {
 
 function stopPresentation() {
     clearInterval(slidesIntervalId);
+    clearInterval(breatheIntervalId);
 }
 
 function schedulePlotEvents(events) {
@@ -82,10 +83,6 @@ function setTheme(value) {
 
 function setCaption(value) {
     captionDiv.html(value);
-}
-
-function stopPlotting() {
-    clearInterval(breatheIntervalId);
 }
 
 function plot(event) {
