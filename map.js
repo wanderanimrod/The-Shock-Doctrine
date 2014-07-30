@@ -86,7 +86,7 @@ function setCaption(value) {
 }
 
 function plot(event) {
-    var center = projection([event.coordinates.lon, event.coordinates.lat]);
+    var center = projection([event.coordinates[1], event.coordinates[0]]);
     var circle = svg.append("circle")
         .attr("cx", center[0])
         .attr("cy", center[1])
